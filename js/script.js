@@ -22,14 +22,16 @@ function newItem() {
     li.toggleClass('strike');
   });
 
+  //Code to delete item//
   let crossOutButton = $('<crossOutButton></crossOutButton>');
    crossOutButton.append(document.createTextNode('X'));
    li.append(crossOutButton);
 
-//Code to delete item//
   function deleteListItem() {
     li.addClass('delete');
   }
+   crossOutButton.on('click', deleteListItem);
+
   //Code to reorder items//
   $('#list').sortable();
 }
